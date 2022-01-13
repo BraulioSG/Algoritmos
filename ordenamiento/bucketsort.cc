@@ -5,9 +5,9 @@ using namespace std;
 // Ordenamiento bucket Sort
 // Complejidad => 2m
 // donde 'm' es la diferencia del valor mas chico al valor mas grande
-#define MXN 110
+#define N 10
 
-int bucket[MXN];
+int bucket[N];
 
 int main(){
     int n, x; 
@@ -16,9 +16,15 @@ int main(){
 	cin >> x;
 	bucket[x]++;
     }
+    //suponiendo el input => 1 5 7 8 1 3 5 1
+    //idx    |0|1|2|3|4|5|6|7|8|9|
+    //bucket |0|2|0|1|0|2|0|1|1|0|
     
     //bucket sort
-    for(int i = 0; i < MXN; i++){
+    //para cada elemento en bucket
+    //imprime i -> bucket[i] numero de veces;
+    //1135578
+    for(int i = 0; i < N; i++){
 	while(bucket[i] > 0){
 	    cout << i << " ";
 	    bucket[i]--;
